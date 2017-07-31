@@ -37,7 +37,6 @@
 
   1. Load the data in local database using the command:
 
-   - ``` cd Data ```
    - ```psql -d news -f newsdata.sql ```
 
   The database includes three tables:
