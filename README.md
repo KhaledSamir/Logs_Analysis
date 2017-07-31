@@ -17,10 +17,8 @@
   1. Install Vagrant and VirtualBox
   2. Download or Clone [fullstack-nanodegree-vm](https://github.com/udacity/fullstack-nanodegree-vm) repository.
   3. Download the [data](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) from here
-     and copy to Data folder and unzip it.
+     and copy to local folder.
   4. Unzip this file after downloading it. The file inside is called newsdata.sql.
-  5. Copy the newsdata.sql file and content of this current repository, by either downloading or cloning it from
-  [Here](https://github.com/KhaledSamir/Logs_Analysis_Logs)
 
 #### Launching the Virtual Machine:
   1. Launch the Vagrant VM inside Vagrant sub-directory in the downloaded fullstack-nanodegree-vm repository using command:
