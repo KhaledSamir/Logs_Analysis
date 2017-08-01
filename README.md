@@ -9,7 +9,7 @@
 ### How to Run?
 
 #### PreRequisites:  
-  * [Python3](https://www.python.org/)
+  * [Python2](https://www.python.org/)
   * [Vagrant](https://www.vagrantup.com/)
   * [VirtualBox](https://www.virtualbox.org/)
 
