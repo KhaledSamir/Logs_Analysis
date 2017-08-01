@@ -5,7 +5,7 @@ RESULTS = []
 
 TITLES = []
 
-#1. What are the most popular three articles of all time?
+# 1. What are the most popular three articles of all time?
 
 QUERY1 = '''SELECT * FROM articleView limit 3'''
 
@@ -21,10 +21,12 @@ QUERY2 = '''SELECT au.name , sum(views) as Views FROM articleView
 
 QUERY3 = '''SELECT * FROM
             (
-            SELECT date(time) , count(log.status) as Allrequests, Failed.fstatus as Frequests ,
+            SELECT date(time) , count(log.status) as Allrequests
+            , Failed.fstatus as Frequests ,
             (Failed.fstatus * 100) / count(log.status) as percentage FROM log
             JOIN (
-                    SELECT date(f.time) as fdate , count(f.status) as fstatus FROM log f
+                    SELECT date(f.time) as fdate ,
+                            count(f.status) as fstatus FROM log f
                     WHERE f.status = '404 NOT FOUND'
                     GROUP BY date(f.time)
             ) Failed
@@ -32,8 +34,10 @@ QUERY3 = '''SELECT * FROM
             GROUP BY date(time) , Failed.fstatus) ss
             WHERE percentage  > 1'''
 
+
 def getquery(num):
-    ''' Return Query that should be returned according the num paramter passed '''
+    ''' Return Query that should be returned
+        according to the num paramter passed '''
     if num == 1:
         return QUERY1
     elif num == 2:
@@ -52,7 +56,6 @@ def runquery(num):
     rows = cur.fetchall()
     TITLES.append('What are the most popular three articles of all time?')
     RESULTS.append(rows)
-
 
 
 def printoutput():
